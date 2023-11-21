@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333; /* Cor de fundo preto */
+    color: orange; /* Cor do texto branco */
+}
+
+.livro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.livro {
+    margin: 10px; /* Adiciona margem entre os livros */
+}
+
+.livro img {
+    max-width: 90%; /* Ajusta a largura máxima da imagem */
+    height: auto;
+}
+
+.livro h2 {
+    margin-top: 10px;
+    color: #f77a3b; /* Cor laranja para o título */
+}
+
+.livro button {
+    margin-top: 10px;
+    background-color: #f77a3b; /* Cor laranja para o botão */
+    color: #080707; /* Cor do texto branco */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#dadosCartao {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: orange; /* Cor do texto branco */
+}
+
+#dadosCartao label,
+#dadosCartao input {
+    margin-bottom: 10px;
+    color: gray; /* Cor do texto branco */
+}
+
+header {
+    margin-right: auto;
+    color: #f77a3b; /* Cor laranja para o texto do header */
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ação e Aventura</title>
+    <link rel="shortcut icon" href="../Icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../estilo/Estilopag.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html">VOLTAR A PÁGINA INICIAL</a>
+    </header>
+
+    <section class="livro">
+        <img src="https://images-americanas.b2w.io/produtos/6832795/imagens/livro-as-cronicas-de-narnia-volume-unico-c-s-lewis/6832795_3_large.jpg" alt="Descrição da imagem 1">
+        <h2>As Crônicas de Nárnia</h2>
+        <button onclick="coletarDadosCartao(1)">Comprar</button>
+    </section>
+
+    <section class="livro">
+        <img src="https://i.zst.com.br/thumbs/12/31/31/1458320652.jpg" alt="Descrição da imagem 2">
+        <h2>Harry Potter e A Pedra Filosofal</h2>
+        <button onclick="coletarDadosCartao(2)">Comprar</button>
+    </section>
+    <div id="dadosCartao" style="display: none;">
+        <h2>Dados do Cartão</h2>
+        <label for="numeroCartao">Número do Cartão:</label>
+        <input type="text" id="numeroCartao" placeholder="**** **** **** ****" maxlength="16">
+
+        <label for="nomeTitular">Nome do Titular:</label>
+        <input type="text" id="nomeTitular" placeholder="Nome Completo">
+
+        <label for="validade">Validade:</label>
+        <input type="text" id="validade" placeholder="MM/AA" maxlength="5">
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" placeholder="123" maxlength="3">
+
+        <button onclick="processarPagamento()">Processar Pagamento</button>
+    </div>
+
+    <script>
+        function coletarDadosCartao(numeroFilme) {
+            document.getElementById('dadosCartao').style.display = 'block';
+        }
+
+        function processarPagamento() {
+            const numeroCartao = document.getElementById('numeroCartao').value;
+            const nomeTitular = document.getElementById('nomeTitular').value;
+            const validade = document.getElementById('validade').value;
+            const cvv = document.getElementById('cvv').value;
+
+            // Adicione a lógica de processamento de pagamento aqui
+            alert('Dados do cartão coletados:\nNúmero: ' + numeroCartao +
+                '\nTitular: ' + nomeTitular +
+                '\nValidade: ' + validade +
+                '\nCVV: ' + cvv);
+
+            // Redirecionar para a página de confirmação ou ação adequada
+        }
+    </script>
+</body>
+</html>

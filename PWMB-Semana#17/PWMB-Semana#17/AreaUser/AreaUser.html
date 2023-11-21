@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÁREA DO USUÁRIO</title>
+    <link rel="shortcut icon" href="../Icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Estilouser.css">
+</head>
+<body>
+    <div class="container">
+        <button type="button" onclick="showLogin()">Login</button>
+        <button type="button" onclick="showRegister()">Cadastro</button>
+
+        <div id="loginContainer" style="display:none;">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="button" onclick="validateLogin()">Entrar</button>
+            </form>
+            <p id="loginStatus"></p>
+        </div>
+
+        <div id="registerContainer" style="display:none;">
+            <h2>Cadastro</h2>
+            <form id="registerForm">
+                <label for="newUsername">Novo Nome de Usuário:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+
+                <label for="newPassword">Nova Senha:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+
+                <button type="button" onclick="registerUser()">Cadastrar</button>
+            </form>
+            <p id="registerStatus"></p>
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById("loginContainer").style.display = "block";
+            document.getElementById("registerContainer").style.display = "none";
+        }
+
+        function showRegister() {
+            document.getElementById("loginContainer").style.display = "none";
+            document.getElementById("registerContainer").style.display = "block";
+        }
+
+        function validateLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Simulando o armazenamento local
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            const user = users.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                document.getElementById("loginStatus").textContent = "Login bem-sucedido!";
+            } else {
+                document.getElementById("loginStatus").textContent = "Credenciais inválidas. Tente novamente.";
+            }
+        }
+
+        function registerUser() {
+            const newUsername = document.getElementById("newUsername").value;
+            const newPassword = document.getElementById("newPassword").value;
+
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            const existingUser = users.find(u => u.username === newUsername);
+
+            if (existingUser) {
+                document.getElementById("registerStatus").textContent = "Nome de usuário já existe. Escolha outro.";
+            } else {
+                users.push({ username: newUsername, password: newPassword });
+                localStorage.setItem("users", JSON.stringify(users));
+                document.getElementById("registerStatus").textContent = "Cadastro bem-sucedido!";
+            }
+        }
+    </script>
+</body>
+</html>

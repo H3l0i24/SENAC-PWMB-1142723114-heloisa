@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romance</title>
+    <link rel="shortcut icon" href="../Icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../estilo/Estilopag.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html">VOLTAR A PÁGINA INICIAL</a>
+    </header>
+
+    <section class="livro">
+        <img src="https://cinemacomrapadura.com.br/imagens/2014/09/20140903-agua-para-elefantes-livro.jpg" alt="Descrição da imagem 1">
+        <h2>Água para elefantes</h2>
+        <button onclick="coletarDadosCartao(1)">Comprar</button>
+    </section>
+
+    <section class="livro">
+        <img src="data:image/jpeg;base64,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" alt="Descrição da imagem 2">
+        <h2>Amor e Gelato</h2>
+        <button onclick="coletarDadosCartao(2)">Comprar</button>
+    </section>
+    <div id="dadosCartao" style="display: none;">
+        <h2>Dados do Cartão</h2>
+        <label for="numeroCartao">Número do Cartão:</label>
+        <input type="text" id="numeroCartao" placeholder="**** **** **** ****" maxlength="16">
+
+        <label for="nomeTitular">Nome do Titular:</label>
+        <input type="text" id="nomeTitular" placeholder="Nome Completo">
+
+        <label for="validade">Validade:</label>
+        <input type="text" id="validade" placeholder="MM/AA" maxlength="5">
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" placeholder="123" maxlength="3">
+
+        <button onclick="processarPagamento()">Processar Pagamento</button>
+    </div>
+
+    <script>
+        function coletarDadosCartao(numeroFilme) {
+            document.getElementById('dadosCartao').style.display = 'block';
+        }
+
+        function processarPagamento() {
+            const numeroCartao = document.getElementById('numeroCartao').value;
+            const nomeTitular = document.getElementById('nomeTitular').value;
+            const validade = document.getElementById('validade').value;
+            const cvv = document.getElementById('cvv').value;
+
+            // Adicione a lógica de processamento de pagamento aqui
+            alert('Dados do cartão coletados:\nNúmero: ' + numeroCartao +
+                '\nTitular: ' + nomeTitular +
+                '\nValidade: ' + validade +
+                '\nCVV: ' + cvv);
+
+            // Redirecionar para a página de confirmação ou ação adequada
+        }
+    </script>
+</body>
+</html>
